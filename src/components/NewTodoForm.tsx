@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NewTodoForm (props){
+export const NewTodoForm:React.FC<{addTodo:Function}> = (props) => {
 
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
@@ -38,7 +38,7 @@ function NewTodoForm (props){
                 <div className="mb-3">
                     <label className="form-label">Description</label>
                     <textarea 
-                        row = {3} 
+                        rows = {3} 
                         className="form-control" 
                         onChange={e => setDescription(e.target.value)} 
                         value={description}
@@ -50,5 +50,3 @@ function NewTodoForm (props){
         </div>
     );
 }
-
-export default NewTodoForm;
